@@ -419,10 +419,10 @@ root_files = {
 <?php get_header(); ?>
 <!-- MAIN | INICIO -->
 <main class="main">
-    <!-- SECCION X | INICIO >
-    <section class="section-">
+    <!-- SECCION X | INICIO -->
+    <section class="section-" -->
     </section>
-    <!-- SECCION X | FINAL >
+    <!-- SECCION X | FINAL -->
 </main>
 <?php get_footer(); ?>
 ''',
@@ -542,7 +542,19 @@ root_files = {
     <header class="header">
     </header>
     <!-- HEADER | FINAL -->
-''',
+    ''',
+    "footer.php": '''
+    <!-- FOOTER | INICIO -->
+    <footer class="footer">
+    </footer>
+    <!-- FOOTER | FINAL -->
+    <?php wp_footer(); ?>
+</body>
+</html>
+    ''',
+    "functions.php": '''
+
+    ''',
     ".gitignore": "hola"
 }
 
