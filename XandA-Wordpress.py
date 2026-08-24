@@ -24,6 +24,20 @@ structure = {
 
 :root{
 }
+
+.body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-content: start;
+}
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-content: start;
+    z-index: 5;
+}
                 ''',
                 "index.css": '''
 /* Aquí va el contenido CSS de tu index */
@@ -412,16 +426,122 @@ root_files = {
 </main>
 <?php get_footer(); ?>
 ''',
-"header": '''
-<?php get_header(); ?>
-<!-- MAIN | INICIO -->
-<main class="main">
-    <!-- SECCION X | INICIO >
-    <section class="section-">
-    </section>
-    <!-- SECCION X | FINAL >
-</main>
-<?php get_footer(); ?>
+    "header.php": '''
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <?php 
+        if ( is_front_page() ) {
+            echo 'Tendencia Interior';
+        } else {
+            wp_title('|', true, 'right');
+            echo 'Tendencia Interior';
+        }
+        ?>
+    </title>
+    <meta name="date" content="2024-09-05">
+    <link rel="canonical" href="URL">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="alternate" hreflang="es" href="URL">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="no-referrer-when-downgrade">-->
+    
+    <!-- SEO -->
+    <meta name="description" content="Descripcion">
+    <meta name="keywords" content="Palabras clave">
+    <meta name="author" content="Autor">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="subject" content="Subject">
+    <meta name="rating" content="General">
+    
+    <!-- Open Graph para Redes Sociales -->
+    <meta property="og:title" content="Titulo">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="URL">
+    <meta property="og:description" content="Descripcion">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="nombre">
+    <meta property="og:image" content="assets/images/">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Titulo">
+    <meta name="twitter:description" content="Descripcion">
+    <meta name="twitter:site" content="nombre">
+    <meta name="twitter:image" content="assets/images/">
+    <meta property="og:image:alt" content="Titulo">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="src/assets/images/iconos/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="src/assets/images/iconos/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="src/assets/images/iconos/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="src/assets/images/iconos/apple-touch-icon-76x76.png">
+
+    <!-- Iconos para Android -->
+    <link rel="icon" sizes="192x192" href="src/assets/images/iconos/android-chrome-192x192.png">
+    <link rel="icon" sizes="512x512" href="src/assets/images/iconos/android-chrome-512x512.png">
+
+    <!-- Otros formatos -->
+    <link rel="icon" type="image/png" sizes="32x32" href="src/assets/images/iconos/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/assets/images/iconos/favicon-16x16.png">
+
+    <!-- AWESOME  -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/assets/styles/main.css">
+    <link rel="stylesheet" href="src/assets/styles/index.css">
+
+    <!-- Datos Estructurados JSON-LD -->
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "NewsMediaOrganization",
+        "name": "Nombre",
+        "url": "URL",
+        "logo": "assets/images/logo.png",
+        "sameAs": [
+            "URL Redes Sociales",
+            "URL Redes Sociales"
+        ],
+        "description": "Descripcion",
+        "founder": "Nombre del fundador",
+        "foundingDate": "Año",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "email": "correo electrónico",
+            "url": "URL contacto"
+        }
+        }
+    </script>
+
+    <!-- Fuentes -->
+
+    <?php wp_head(); ?>
+</head>
+<body class="body" data-pagina="<?php echo get_post_field('post_name'); ?>">
+
+    <?php wp_body_open(); ?>
+
+    <!-- HEADER | INICIO -->
+    <header class="header">
+    </header>
+    <!-- HEADER | FINAL -->
 ''',
     ".gitignore": "hola"
 }

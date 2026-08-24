@@ -24,6 +24,20 @@ structure = {
 
 :root{
 }
+
+.body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-content: start;
+}
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-content: start;
+    z-index: 5;
+}
                 ''',
                 "index.css": '''
 /* Aquí va el contenido CSS de tu index */
@@ -402,7 +416,6 @@ root_files = {
     "LICENSE.txt": " ",
     "manifest.json": "{\n  \"name\": \"Proyecto\",\n  \"shorts_name\": \"Proyecto\",\n  \"start_url\": \"/\",\n  \"display\": \"standalone\"\n}\n",
     "index.html": '''
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -471,6 +484,7 @@ root_files = {
 
     <!-- CSS -->
     <link rel="stylesheet" href="src/assets/styles/main.css">
+    <link rel="stylesheet" href="src/assets/styles/index.css">
 
     <!-- Datos Estructurados JSON-LD -->
     <script type="application/ld+json">
@@ -513,6 +527,7 @@ root_files = {
 
     <!-- Scripts -->
     <script src="src/assets/scripts/main.js"></script>
+    <script src="src/assets/scripts/index.js"></script>
 </body>
 </html>
 ''',
