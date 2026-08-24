@@ -14,10 +14,24 @@ structure = {
             },
             "fonts": {},
             "styles": {
-                "main.css": "/* Aquí va el contenido CSS principal */\nbody {\n  font-family: Arial, sans-serif;\n}\n"
+                "main.css": '''
+/* Aquí va el contenido CSS principal */
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+:root{
+}
+                ''',
+                "index.css": '''
+/* Aquí va el contenido CSS de tu index */
+                '''
             },
             "scripts": {
-                "main.js": "// Aquí va el contenido JS principal\nconsole.log('Hola mundo');\n"
+                "main.js": "// Aquí va el contenido JS principal",
+                "index.js": "// Aquí va el contenido JS de tu index"
             }
         },
         "pages": {
